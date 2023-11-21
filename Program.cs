@@ -15,6 +15,7 @@ namespace NeyCalcGUI
         const int CapacidadeNeymar = 5;
         const int KilobytesNeymar = 206;
         const int VelocidadeNeymar = 30;
+        const int TemperaturaNeymar = 37;
         public static float Calculate(float UV, int UU)
         {
             return UU switch
@@ -24,6 +25,7 @@ namespace NeyCalcGUI
                 2 => UV / CapacidadeNeymar,
                 3 => UV / KilobytesNeymar,
                 4 => UV / VelocidadeNeymar,
+                5 => UV/ TemperaturaNeymar,
                 _ => throw new InvalidDataException("Tu é burro, irmão?")
             };
         }

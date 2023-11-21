@@ -12,11 +12,12 @@
         </Border>
         <TextBox x:Name="InputTextBox" HorizontalAlignment="Center" VerticalAlignment="Top" Text="" Width="200" Height="20" Margin="0,105,0,0" TextWrapping="Wrap" IsReadOnly="false"></TextBox>
         <ComboBox Margin="0,226,0,0" Width="200" Height="20" HorizontalAlignment="Center" VerticalAlignment="Top" x:Name="InputDropBox">
-            <ComboBoxItem Content="Height"/>
-            <ComboBoxItem Content="Mass"/>
-            <ComboBoxItem Content="Capacity"/>
+            <ComboBoxItem Content="Meters"/>
+            <ComboBoxItem Content="Kilos"/>
+            <ComboBoxItem Content="Liters"/>
             <ComboBoxItem Content="Kilobytes"/>
             <ComboBoxItem Content="Km/h"/>
+            <ComboBoxItem Content="Celsius"/>
         </ComboBox>
         <Button FontFamily="Arial" FontSize="25" Content="CALCULATE" Click="Button_Click" Margin="39,292,39,294"/>
         <TextBox x:Name="ResultBox" FontSize="32"  HorizontalAlignment="Center" Margin="0,393,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="340" IsReadOnly="true" Height="72" TextAlignment="Center" Background="Black" Foreground="White"/>

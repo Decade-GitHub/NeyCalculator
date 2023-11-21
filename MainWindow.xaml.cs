@@ -73,6 +73,7 @@ namespace NeyCalcGUI
                 2 => "Neyliters",
                 3 => "Neykilobytes",
                 4 => "Neykilometers per hour",
+                5 => "Neycelsius",
                 _ => throw new ArgumentOutOfRangeException("What the fuck")
             };
         }
