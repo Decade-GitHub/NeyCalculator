@@ -7,21 +7,25 @@
         mc:Ignorable="d"
         Title="Neycalculadora" Height="640" Width="480">
     <Grid HorizontalAlignment="Center" VerticalAlignment="Center" Height="640" Width="480" >
-        <Border Background="Black" Opacity="1">
-            <TextBlock TextWrapping="Wrap" FontFamily="Arial" FontWeight="Bold" FontSize="50" Text="Choose a unit" Foreground="White" Background="Black" Margin="39,154,39,398" TextAlignment="Center"/>
-        </Border>
-        <TextBox x:Name="InputTextBox" HorizontalAlignment="Center" VerticalAlignment="Top" Text="" Width="200" Height="20" Margin="0,105,0,0" TextWrapping="Wrap" IsReadOnly="false"></TextBox>
-        <ComboBox Margin="0,226,0,0" Width="200" Height="20" HorizontalAlignment="Center" VerticalAlignment="Top" x:Name="InputDropBox">
-            <ComboBoxItem Content="Meters"/>
+        <Border Height="1080" Width="1920" Background="Black" Opacity="1"></Border>
+        <ComboBox Margin="140,320,140,300" Width="200" Height="20" x:Name="PlayerDropBox">
+            <ComboBoxItem Content="Neymar"/>
+            <ComboBoxItem Content="Messi"/>
+        </ComboBox>
+        <TextBox x:Name="InputTextBox" HorizontalAlignment="Center" VerticalAlignment="Top" Text="" Width="200" Height="20" Margin="0,215,0,0" TextWrapping="Wrap" IsReadOnly="false"></TextBox>
+        <ComboBox Margin="0,110,0,0" Width="200" Height="20" HorizontalAlignment="Center" VerticalAlignment="Top" x:Name="InputDropBox">
+            <ComboBoxItem Content="Centimeters"/>
             <ComboBoxItem Content="Kilos"/>
             <ComboBoxItem Content="Liters"/>
             <ComboBoxItem Content="Kilobytes"/>
             <ComboBoxItem Content="Km/h"/>
             <ComboBoxItem Content="Celsius"/>
         </ComboBox>
-        <Button FontFamily="Arial" FontSize="25" Content="CALCULATE" Click="Button_Click" Margin="39,292,39,294"/>
-        <TextBox x:Name="ResultBox" FontSize="32"  HorizontalAlignment="Center" Margin="0,393,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="340" IsReadOnly="true" Height="72" TextAlignment="Center" Background="Black" Foreground="White"/>
-        <TextBlock FontFamily="Arial" Foreground="White" FontSize="50" FontWeight="Bold" Text="Input a number" HorizontalAlignment="Center" Margin="0,25,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Height="80" Width="402" TextAlignment="Center"/>
-        <TextBlock x:Name="ResultTypeBox" FontFamily="Arial" FontSize="40" HorizontalAlignment="Center" Margin="0,470,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Height="100" Width="340" Background="Black" Foreground="White" TextAlignment="Center"/>
+        <Button FontFamily="Arial" FontSize="25" Content="CALCULATE" Click="Button_Click" Margin="39,368,39,218"/>
+        <TextBox x:Name="ResultBox" FontSize="32"  HorizontalAlignment="Center" Margin="0,427,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="340" IsReadOnly="true" Height="72" TextAlignment="Center" Background="Black" Foreground="White"/>
+        <TextBlock FontFamily="Arial" Foreground="White" FontSize="50" FontWeight="Bold" Text="Input a number" HorizontalAlignment="Center" Margin="0,135,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Height="80" Width="402" TextAlignment="Center"/>
+        <TextBlock x:Name="ResultTypeBox" FontFamily="Arial" FontSize="40" HorizontalAlignment="Center" Margin="0,515,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Height="100" Width="340" Background="Black" Foreground="White" TextAlignment="Center"/>
+        <TextBlock FontFamily="Arial" Foreground="White" FontSize="50" FontWeight="Bold" Text="Select a unit" HorizontalAlignment="Center" Margin="0,30,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Height="80" Width="402" TextAlignment="Center"/>
+        <TextBlock FontFamily="Arial" Foreground="White" FontSize="50" FontWeight="Bold" Text="Choose a player" HorizontalAlignment="Center" Margin="0,240,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Height="80" Width="402" TextAlignment="Center"/>
     </Grid>
 </Window>

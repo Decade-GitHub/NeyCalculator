@@ -4,14 +4,6 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows;
-using System.Windows.Controls;
-using System.Windows.Data;
-using System.Windows.Documents;
-using System.Windows.Input;
-using System.Windows.Media;
-using System.Windows.Media.Imaging;
-using System.Windows.Navigation;
-using System.Windows.Shapes;
 
 namespace NeyCalcGUI
 {
@@ -26,6 +18,7 @@ namespace NeyCalcGUI
         private void Button_Click(object sender, RoutedEventArgs e)
         {
             int UserUnit = InputDropBox.SelectedIndex;
+            int PlayerValue = PlayerDropBox.SelectedIndex;
             if (!ValidateUserValueInput())
             {
                 ResultBox.Text = ErrorMessage;
@@ -34,11 +27,11 @@ namespace NeyCalcGUI
             try
             {
                 float UserValue = TransformUserValue();
-                float Result = Master.Calculate(UserValue, UserUnit);
-                ResultBox.Text = Result.ToString();
+                PlayerResult Result = Master.Calculate(UserValue, UserUnit, PlayerValue);
+                ResultBox.Text = Result.ResultValue.ToString();
 
-                string ResultType = ReturnTypeExpression();
-                ResultTypeBox.Text = ResultType;
+                PlayerResult ResultType = Master.FetchResultType(UserUnit, PlayerValue);
+                ResultTypeBox.Text = ResultType.ResultType;
             }
             catch (Exception ex)
             {
@@ -61,21 +54,6 @@ namespace NeyCalcGUI
         {
             _ = float.TryParse(InputTextBox.Text, out float UserValue);
             return UserValue;
-        }
-        private string ReturnTypeExpression()
-        {
-            int UserUnit = InputDropBox.SelectedIndex;
-
-            return UserUnit switch
-            {
-                0 => "Neymeters",
-                1 => "Neykilos",
-                2 => "Neyliters",
-                3 => "Neykilobytes",
-                4 => "Neykilometers per hour",
-                5 => "Neycelsius",
-                _ => throw new ArgumentOutOfRangeException("What the fuck")
-            };
         }
     }
 }

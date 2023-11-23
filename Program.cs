@@ -1,32 +1,31 @@
 ﻿using System;
-using System.IO;
-using System.Windows.Controls;
-using System.Xml.Serialization;
 
 namespace NeyCalcGUI
 {
     class Master
     {
-        private string? UserValue;
-        private int UserUnit;
-
-        const int AlturaNeymar = 175;
-        const int MassaNeymar = 63;
-        const int CapacidadeNeymar = 5;
-        const int KilobytesNeymar = 206;
-        const int VelocidadeNeymar = 30;
-        const int TemperaturaNeymar = 37;
-        public static float Calculate(float UV, int UU)
+        public static PlayerResult Calculate(float UV, int UU, int PV)
         {
-            return UU switch
+            Neymar n = new();
+            Messi m = new();
+            
+            return PV switch
             {
-                0 => UV / AlturaNeymar,
-                1 => UV / MassaNeymar,
-                2 => UV / CapacidadeNeymar,
-                3 => UV / KilobytesNeymar,
-                4 => UV / VelocidadeNeymar,
-                5 => UV/ TemperaturaNeymar,
-                _ => throw new InvalidDataException("Tu é burro, irmão?")
+                0 => n.Calculate(UV, UU),
+                1 => m.Calculate(UV, UU),
+                _ => throw new Exception("This is impossible."),
+            };
+        }
+        public static PlayerResult FetchResultType(int UU, int PV)
+        {
+            Neymar n = new();
+            Messi m = new();
+
+            return PV switch
+            {
+                0 => n.FetchResultType(UU),
+                1 => m.FetchResultType(UU),
+                _ => throw new Exception("This is impossible.")
             };
         }
     }
